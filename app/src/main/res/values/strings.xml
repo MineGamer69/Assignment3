@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Assignment3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Welcome to Movie Search, In this app you will be able to search for any movie and country aliases (us, uk, etc). You will get a response of where the movie is available to view in that specific country! Ex (Amazon Prime, Netflix, etc).</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="country_code">Country Code</string>
+    <string name="submit">Submit</string>
 </resources>
