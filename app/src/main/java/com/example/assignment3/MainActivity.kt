@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Main activity", response.message())
                         Log.d("Main activity", response.headers().toString())
                         Log.d("Main activity", response.body().toString())
+
                     }
 
                 }
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             })
+
         }
 
     }
