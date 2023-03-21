@@ -13,11 +13,11 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("/lookup")
-    @Headers("X-RapidAPI-Key:99f0ab7856msh7f9043f5906ca27p14c5a5jsn6f1aa4617854", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
+    @Headers("X-RapidAPI-Key:", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
     fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<ArrayList<MovData?>?>?
 
     @GET("/idlookup")
-    @Headers("X-RapidAPI-Key:99f0ab7856msh7f9043f5906ca27p14c5a5jsn6f1aa4617854", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
+    @Headers("X-RapidAPI-Key:", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
     fun getMoviebyid(@Query("source_id") srcID:String, @Query("source") imdb:String) : Call<ArrayList<MovIDData?>?>?
 
 
