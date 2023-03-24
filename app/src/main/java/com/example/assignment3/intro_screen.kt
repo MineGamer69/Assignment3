@@ -70,7 +70,7 @@ class intro_screen : Fragment(), View.OnClickListener {
 
                         }
 
-                        override fun onFailure(call: Call<ArrayList<MovData?>?>, t: Throwable) {
+                        override fun onFailure(call: Call<ArrayList<MovData?>?>?, t: Throwable) {
                             if (t != null) {
                                 t.message?.let {
                                     Log.d("onFailure", it)
