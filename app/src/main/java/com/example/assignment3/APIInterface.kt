@@ -1,5 +1,6 @@
 package com.example.assignment3
 
+
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -13,11 +14,12 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("/lookup")
-    @Headers("X-RapidAPI-Key:99f0ab7856msh7f9043f5906ca27p14c5a5jsn6f1aa4617854", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-    fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<ArrayList<MovData?>?>?
+    @Headers("X-RapidAPI-Key:4ca157c19fmsh9cb5e3b4c9fc3fcp14b886jsn8b1bd93436f9", "X-RapidAPI-Host:https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
+    //fun getMoviebyname() : Call<ArrayList<MovieResult?>?>?
+    fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<ArrayList<MovieResult?>?>?
 
     @GET("/idlookup")
-    @Headers("X-RapidAPI-Key:99f0ab7856msh7f9043f5906ca27p14c5a5jsn6f1aa4617854", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
+    @Headers("X-RapidAPI-Key:4ca157c19fmsh9cb5e3b4c9fc3fcp14b886jsn8b1bd93436f9", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
     fun getMoviebyid(@Query("source_id") srcID:String, @Query("source") imdb:String) : Call<ArrayList<MovIDData?>?>?
 
 
