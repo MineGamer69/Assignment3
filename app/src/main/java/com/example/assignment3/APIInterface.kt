@@ -1,6 +1,6 @@
 package com.example.assignment3
 
-
+import android.os.Build
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -11,11 +11,13 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 
+
 interface ApiInterface {
 
+
     @GET("/lookup")
-    @Headers("X-RapidAPI-Key:4ca157c19fmsh9cb5e3b4c9fc3fcp14b886jsn8b1bd93436f9", "X-RapidAPI-Host:https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-    //fun getMoviebyname() : Call<ArrayList<MovieResult?>?>?
+
+    @Headers("X-RapidAPI-Key:4ca157c19fmsh9cb5e3b4c9fc3fcp14b886jsn8b1bd93436f9", "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
     fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<ArrayList<MovieResult?>?>?
 
     @GET("/idlookup")
