@@ -39,6 +39,7 @@ class SettingsFragment : Fragment() {
                 R.id.red_color -> setBackground(R.color.red)
                 R.id.green_color -> setBackground(R.color.green)
                 R.id.blue_color -> setBackground(R.color.blue)
+                R.id.white_color -> setBackground(R.color.white)
             }
 
     }
