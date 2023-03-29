@@ -1,0 +1,25 @@
+<RadioGroup android:id="@+id/background_color_group"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RadioButton
+        android:id="@+id/red_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red" />
+
+    <RadioButton
+        android:id="@+id/green_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green" />
+
+    <RadioButton
+        android:id="@+id/blue_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blue" />
+
+</RadioGroup>

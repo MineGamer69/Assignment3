@@ -50,51 +50,8 @@ class intro_screen : Fragment(), View.OnClickListener {
             if(!TextUtils.isEmpty(countryCode.text.toString())){
                 val movNameRdy = movieName.text.toString()
                 val countryCodeRdy = countryCode.text.toString()
-                val apiInterface = ApiInterface.create().getMoviebyname(movNameRdy,countryCodeRdy)
-
-                apiInterface?.enqueue( object : Callback<ArrayList<MovData?>?> {
-                    override fun onResponse(
-                        call: Call<ArrayList<MovData?>?>?,
-                        response: Response<ArrayList<MovData?>?>
-                    ) {
-                        Toast.makeText(context,"API Call Successful!", Toast.LENGTH_SHORT).show()
-                        if (response?.body() != null) {
-                            val gson = Gson()
-                            val resultsJson = gson.toJson(response.body())
-                            Log.d("Main activity", resultsJson.toString())
-                            val action = intro_screenDirections.actionIntroScreenToResultFragment()
-
-                            //val action = IntroScreenDirections.actionIntroScreenToResultFragment()
-                            view?.findNavController()?.navigate(action)
-                            //val action = intro_screenDirections.actionIntroScreenToResultFragment(resultsJson)
-                            //view?.findNavController()?.navigate(action)
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "Error could not make the API call!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        //if (response != null) {
-                        //    Log.d("Main activity", response.message())
-                        //Log.d("Main activity", response.headers().toString())
-                        //    Log.d("Main activity", response.body().toString())
-                        //    //change this below when matt is done
-                            //val doAction = intro_screenDirections.actionIntroScreenToMainActivity()
-                       //     val doAction = intro_screenDirections.actionIntroScreenToResultFragment()
-                       //     p0?.findNavController()?.navigate(doAction)
-                        }
-
-
-                    override fun onFailure(call: Call<ArrayList<MovData?>?>?, t: Throwable) {
-                        if (t != null) {
-                            t.message?.let {
-                                Log.d("onFailure", it)
-                                Toast.makeText(context,"Error could not make the API call!", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
-                })
+                val action = intro_screenDirections.actionIntroScreenToSearchResultFragment(movNameRdy, countryCodeRdy)
+                navCtrl.navigate(action)
 
             }
         }
