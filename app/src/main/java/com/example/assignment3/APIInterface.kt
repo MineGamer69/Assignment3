@@ -48,7 +48,7 @@ import retrofit2.http.Query
         @GET("/lookup")
 
         @Headers(BuildConfig.api_key, "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-        fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<Movie.SearchResultResponse>
+        fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<MovieNew>
 
         @GET("/idlookup")
         @Headers(BuildConfig.api_key, "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")

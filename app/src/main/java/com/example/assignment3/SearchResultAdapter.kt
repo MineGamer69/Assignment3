@@ -5,9 +5,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.assignment3.MovieNew
 import com.example.assignment3.R
 
-class SearchResultAdapter(private var searchResults: List<Movie>) :
+class SearchResultAdapter(private var searchResults: List<com.example.assignment3.Result>) :
     RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,12 +22,11 @@ class SearchResultAdapter(private var searchResults: List<Movie>) :
         private val nameTextView: TextView = view.findViewById(R.id.nameTextView)
         private val platformTextView: TextView = view.findViewById(R.id.platformTextView)
 
-        fun bind(searchResult: Movie) {
+        fun bind(searchResult: com.example.assignment3.Result) {
             Glide.with(itemView.context).load(searchResult.picture).into(iconImageView)
             nameTextView.text = searchResult.name
             platformTextView.text = searchResult.locations.joinToString { it.display_name }
         }
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -36,7 +36,7 @@ class SearchResultAdapter(private var searchResults: List<Movie>) :
 
     override fun getItemCount() = searchResults.size
 
-    fun updateData(newData: List<Movie>) {
+    fun updateData(newData: List<com.example.assignment3.Result>) {
         searchResults = newData
         notifyDataSetChanged()
     }
