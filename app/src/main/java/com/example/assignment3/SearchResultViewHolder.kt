@@ -13,9 +13,9 @@ class SearchResultViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
     private val platformTextView: TextView = itemView.findViewById(R.id.platformTextView)
 
-    fun bind(movie: Movie) {
-        Glide.with(itemView.context).load(movie.picture).into(iconImageView)
-        nameTextView.text = movie.name
-        platformTextView.text = movie.locations.joinToString { it.display_name }
+    fun bind(searchResult: com.example.assignment3.Result) {
+        Glide.with(itemView.context).load(searchResult.picture).into(iconImageView)
+        nameTextView.text = searchResult.name
+        platformTextView.text = searchResult.locations.joinToString { it.display_name }
     }
 }

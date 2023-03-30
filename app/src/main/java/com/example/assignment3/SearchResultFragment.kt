@@ -44,15 +44,16 @@ class SearchResultFragment : Fragment() {
         val cou = bundle?.let { SearchResultFragmentArgs.fromBundle(it).country.toString() }
 
         if (mN != null && cou != null) {
-            ApiInterface.create().getMoviebyname(mN, cou).enqueue(object : Callback<Movie.SearchResultResponse> {
-                override fun onResponse(call: Call<Movie.SearchResultResponse>, response: Response<Movie.SearchResultResponse>) {
-                    val searchResults = response.body()?.searchResults ?: emptyList()
+            ApiInterface.create().getMoviebyname(mN, cou).enqueue(object : Callback<MovieNew> {
+                override fun onResponse(call: Call<MovieNew>, response: Response<MovieNew>) {
+                    val searchResults = response.body()?.results ?: emptyList()
+                    Log.d("works","working")
                     // Update the adapter with the new data
                     searchResultAdapter.updateData(searchResults)
                 }
 
 
-                override fun onFailure(call: Call<Movie.SearchResultResponse>, t: Throwable) {
+                override fun onFailure(call: Call<MovieNew>, t: Throwable) {
                     // Handle failure case
                     t.message?.let { Log.d("onFailure", it) }
                 }
