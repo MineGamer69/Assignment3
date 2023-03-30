@@ -47,6 +47,7 @@ class SearchResultFragment : Fragment() {
             ApiInterface.create().getMoviebyname(mN, cou).enqueue(object : Callback<MovieNew> {
                 override fun onResponse(call: Call<MovieNew>, response: Response<MovieNew>) {
                     val searchResults = response.body()?.results ?: emptyList()
+                    Log.d("works","working")
                     // Update the adapter with the new data
                     searchResultAdapter.updateData(searchResults)
                 }
