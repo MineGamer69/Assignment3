@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import org.w3c.dom.Text
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +25,6 @@ class intro_screen : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
         }
     }
 
@@ -51,35 +50,8 @@ class intro_screen : Fragment(), View.OnClickListener {
             if(!TextUtils.isEmpty(countryCode.text.toString())){
                 val movNameRdy = movieName.text.toString()
                 val countryCodeRdy = countryCode.text.toString()
-                val apiInterface = ApiInterface.create().getMoviebyname(movNameRdy,countryCodeRdy)
-                if (apiInterface != null) {
-                    apiInterface.enqueue( object : Callback<ArrayList<MovData?>?> {
-                        override fun onResponse(
-                            call: Call<ArrayList<MovData?>?>?,
-                            response: Response<ArrayList<MovData?>?>
-                        ) {
-                            Toast.makeText(context,"API Call Successful!", Toast.LENGTH_SHORT).show()
-                            if (response != null) {
-                                Log.d("Main activity", response.message())
-                                Log.d("Main activity", response.headers().toString())
-                                Log.d("Main activity", response.body().toString())
-                                //change this below when matt is done
-                                val doAction = intro_screenDirections.actionIntroScreenToMainActivity()
-                                p0?.findNavController()?.navigate(doAction)
-                            }
-
-                        }
-
-                        override fun onFailure(call: Call<ArrayList<MovData?>?>?, t: Throwable) {
-                            if (t != null) {
-                                t.message?.let {
-                                    Log.d("onFailure", it)
-                                    Toast.makeText(context,"Error could not make the API call!", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                        }
-                    })
-                }
+                val action = intro_screenDirections.actionIntroScreenToSearchResultFragment(movNameRdy, countryCodeRdy)
+                navCtrl.navigate(action)
 
             }
         }
