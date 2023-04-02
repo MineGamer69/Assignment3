@@ -11,4 +11,6 @@
     <string name="no_results_found">No Results</string>
     <string name="batman">Batman</string>
     <string name="us">Us</string>
+    <string name="search_screen_desc">Welcome to Movie Search, In this app you will be able to search for any movie and country aliases (us, uk, etc). You will get a response of where the movie is available to view in that specific country! Ex (Amazon Prime, Netflix, etc).</string>
+    <string name="search_result_desc">You will be able to share the download link for this app! </string>
 </resources>

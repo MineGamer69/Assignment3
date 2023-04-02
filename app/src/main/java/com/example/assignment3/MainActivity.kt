@@ -7,8 +7,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ShareActionProvider
+import androidx.core.app.ShareCompat
 import androidx.core.view.MenuItemCompat
 import androidx.navigation.NavController
+import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -57,21 +59,22 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.action_share -> {
-                val sendIntent = Intent().apply {
+                val navHostFragment = supportFragmentManager.primaryNavigationFragment as NavHostFragment?
+
+                val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "Sharing our movie name here!")
+                    putExtra(Intent.EXTRA_TEXT, "Download Movie Search app in the Google PlayStore!")
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)
-
-                // Get the ShareActionProvider
-                val shareActionProvider =
-                    MenuItemCompat.getActionProvider(item) as ShareActionProvider?
-
-                // Set the ShareIntent to the ShareActionProvider
-                shareActionProvider?.setShareIntent(shareIntent)
-
+                startActivity(shareIntent)
                 return true
+            }
+
+
+            R.id.helpFragment -> {
+                navController.navigate(R.id.helpFragment2)
+                true
             }
             else -> return NavigationUI.onNavDestinationSelected(item, navController)
         }
