@@ -5,8 +5,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.assignment3.MovieNew
 import com.example.assignment3.R
+
 
 class SearchResultAdapter(private var searchResults: List<com.example.assignment3.Result>) :
     RecyclerView.Adapter<SearchResultAdapter.ViewHolder>() {
