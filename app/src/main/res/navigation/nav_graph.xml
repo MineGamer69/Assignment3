@@ -16,17 +16,11 @@
         <action
             android:id="@+id/action_intro_screen_to_searchResultFragment"
             app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_intro_screen_to_helpFragment2"
+            app:destination="@id/helpFragment2" />
     </fragment>
 
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.assignment3.DetailFragment"
-        android:label="DetailFragment" >
-        <argument
-           android:name="id"
-            app:argType="integer"
-        />
-    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.assignment3.SettingsFragment"
@@ -44,4 +38,8 @@
             app:argType="string"
             app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/helpFragment2"
+        android:name="com.example.assignment3.HelpFragment"
+        android:label="HelpFragment" />
 </navigation>

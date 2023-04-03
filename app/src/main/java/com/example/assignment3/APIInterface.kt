@@ -1,3 +1,5 @@
+//Author: Aaryan Kapoor & Matt Nova
+
 package com.example.assignment3
 
 import android.os.Build
@@ -14,34 +16,9 @@ import retrofit2.http.Query
 
 
 
-//interface ApiInterface {
-//
-//
-//    @GET("/lookup")
-//
-//    @Headers(BuildConfig.api_key, "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-//    fun getMoviebyname(@Query("term") name:String, @Query("country") country:String) : Call<Movie.SearchResultResponse>
-//
-//    @GET("/idlookup")
-//    @Headers(BuildConfig.api_key, "X-RapidAPI-Host:utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-//    fun getMoviebyid(@Query("source_id") srcID:String, @Query("source") imdb:String) : Call<ArrayList<Movie.SearchResultResponse?>?>?
-//
-//    package com.example.assignment3
-//
-//    import android.os.Build
-//    import com.google.gson.JsonElement
-//    import com.google.gson.JsonObject
-//    import okhttp3.OkHttpClient
-//    import okhttp3.logging.HttpLoggingInterceptor
-//    import retrofit2.Call
-//    import retrofit2.Retrofit
-//    import retrofit2.converter.gson.GsonConverterFactory
-//    import retrofit2.http.GET
-//    import retrofit2.http.Headers
-//    import retrofit2.http.Query
 
 
-
+//Backend for our api gets
     interface ApiInterface {
 
 

@@ -1,3 +1,4 @@
+//Author: Aaryan Kapoor & Matt Nova
 package com.example.assignment3
 
 import Movie
@@ -12,7 +13,7 @@ class SearchResultViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     private val iconImageView: ImageView = itemView.findViewById(R.id.iconImageView)
     private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
     private val platformTextView: TextView = itemView.findViewById(R.id.platformTextView)
-
+    //setup databinding
     fun bind(searchResult: com.example.assignment3.Result) {
         Glide.with(itemView.context).load(searchResult.picture).into(iconImageView)
         nameTextView.text = searchResult.name

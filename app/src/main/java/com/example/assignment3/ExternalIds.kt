@@ -1,5 +1,6 @@
 package com.example.assignment3
-
+// Author: Aaryan Kapoor & Matt Nova
+//Data class
 data class ExternalIds(
     val facebook: Any,
     val gracenote: Any,

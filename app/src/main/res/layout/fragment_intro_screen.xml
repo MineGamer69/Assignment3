@@ -39,9 +39,9 @@
         android:layout_marginStart="101dp"
         android:layout_marginTop="393dp"
         android:ems="10"
+        android:hint="Movie Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/batman"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,9 +52,9 @@
         android:layout_marginStart="101dp"
         android:layout_marginTop="466dp"
         android:ems="10"
+        android:hint="Country Code"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="@string/us"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
