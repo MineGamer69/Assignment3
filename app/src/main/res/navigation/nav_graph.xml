@@ -22,15 +22,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.assignment3.DetailFragment"
-        android:label="DetailFragment" >
-        <argument
-           android:name="id"
-            app:argType="integer"
-        />
-    </fragment>
-    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.assignment3.SettingsFragment"
         android:label="SettingsFragment" />

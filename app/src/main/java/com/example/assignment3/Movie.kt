@@ -1,3 +1,4 @@
+// Author: Aaryan Kapoor & Matt Nova
 import com.google.gson.annotations.SerializedName
 
 data class Movie(

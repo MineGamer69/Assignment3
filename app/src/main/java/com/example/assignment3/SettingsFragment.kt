@@ -1,4 +1,5 @@
 package com.example.assignment3
+//Author: Aaryan Kapoor & Matt Nova
 
 import android.graphics.Color
 import android.os.Bundle
@@ -25,6 +26,7 @@ class SettingsFragment : Fragment() {
     }
 
     private fun setBackground(colorId: Int) {
+        //background color setup
         Log.d("SettingsFragment", "Setting background color to ${colorId}")
         val color = ContextCompat.getColor(requireContext(), colorId)
         requireActivity().findViewById<View>(android.R.id.content).setBackgroundColor(color)
@@ -33,6 +35,7 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //using radio buttons to setup colors
         val radioGroup = view.findViewById<RadioGroup>(R.id.background_color_group)
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {

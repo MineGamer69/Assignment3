@@ -1,5 +1,7 @@
+// Author: Aaryan Kapoor & Matt Nova
 package com.example.assignment3
 
+import SearchResultAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Setting up our navigation for our toolbar
 
 
 
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //Our inflator command
         menuInflater.inflate(R.menu.toolbar, menu)
         return super.onCreateOptionsMenu(menu)
     }
@@ -55,15 +59,25 @@ class MainActivity : AppCompatActivity() {
         val menuID = item.itemId
         return when (menuID) {
             R.id.action_settings -> {
+                //Settings button implementation
                 navController.navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_share -> {
-                val navHostFragment = supportFragmentManager.primaryNavigationFragment as NavHostFragment?
+                //Our share button implementation
+                val navHostFrag = supportFragmentManager.primaryNavigationFragment as NavHostFragment?
+                val SearchResultFrag = navHostFrag?.childFragmentManager?.primaryNavigationFragment as? SearchResultFragment
+
+                val bundle = SearchResultFrag?.arguments
+                val mN = bundle?.let { SearchResultFragmentArgs.fromBundle(it).movName.toString() }
+                val cou = bundle?.let { SearchResultFragmentArgs.fromBundle(it).country.toString() }
+
 
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "Download Movie Search app in the Google PlayStore!")
+                    putExtra(Intent.EXTRA_TEXT,
+                        "Look what movie I am searching for! Movie Name: $mN Country: $cou"
+                    )
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)
@@ -73,6 +87,7 @@ class MainActivity : AppCompatActivity() {
 
 
             R.id.helpFragment -> {
+                //Help Button implementation
                 navController.navigate(R.id.helpFragment2)
                 true
             }

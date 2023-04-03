@@ -1,3 +1,4 @@
+// Author: Aaryan Kapoor & Matt Nova
 package com.example.assignment3
 
 data class MovieNew(

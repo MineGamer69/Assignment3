@@ -1,3 +1,4 @@
+// Author: Aaryan Kapoor & Matt Nova
 package com.example.assignment3
 
 import android.os.Bundle
@@ -37,12 +38,14 @@ class intro_screen : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        //binding our start button to the listner
         super.onViewCreated(view, savedInstanceState)
         navCtrl = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.start_button).setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
+        //Setting up our submit button so it navigates to the other fragment that does the api call
         Toast.makeText(context,"Submitting...", Toast.LENGTH_SHORT).show()
         val movieName: EditText = requireView().findViewById(R.id.movieName)
         val countryCode: EditText = requireView().findViewById(R.id.countryCode)
